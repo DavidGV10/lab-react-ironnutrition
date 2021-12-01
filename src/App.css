@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+
+}
+.listContainer{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .App-logo {
