@@ -12,7 +12,7 @@ export default function Search(props){
     return (
         <div>
             <label htmlFor="search">Search</label>
-            <Input name="search" type="text" onChange={handleInput} value={food.value}/>
+            <Input name="search" type="text" onChange={handleInput} value={food}/>
         </div>
     )
 }

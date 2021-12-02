@@ -15,6 +15,7 @@ function App() {
   function addNewFood(body){
     const newList = filteredFood.slice()
     setFilteredFood(newList.concat([body]))
+    setFoodList(newList.concat([body]))
   }
   function filterFood(letters){
     if(letters === "") setFilteredFood(foodList)
@@ -28,12 +29,22 @@ function App() {
   function toggleAddForm(){
     setShowAddForm(!showAddForm)
   } 
-  console.log(filteredFood.length)
+  function prueba(){
+    if(showAddForm){
+      return <AddFoodForm addNewFood={addNewFood}/>
+      }
+  }
   return (
     <div className="App">
-      {showAddForm && <AddFoodForm addNewFood={addNewFood}/>}
+      {prueba()}
       
-      <button onClick={toggleAddForm}>{showAddForm ? "Hide Form" : "Add New Food"}</button>
+      {/*
+        if(showAddForm){
+        <AddFoodForm addNewFood={addNewFood}/>
+        } 
+      */}
+      
+      <button onClick={()=>toggleAddForm()}>{showAddForm ? "Hide Form" : "Add New Food"}</button>
       <Search filterFood={filterFood}/>
       <h1>Food List</h1>
       <div className="listContainer">
